@@ -21,9 +21,9 @@ const languages = [
     { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/919/919828.png" },
     { name: "Ruby", icon: "https://cdn-icons-png.flaticon.com/128/919/919842.png" },
     { name: "PHP", icon: "https://cdn-icons-png.flaticon.com/128/919/919830.png" },
-    { name: "Go", icon: "G:/COPY DATA/COPY DATA/AFTER FORMAT STUFFS-8.94 GB/ACADEMIC STUFFS/COMPUTER STUDIES/Examples/infinity-compiler-hub/src/assets/icons/Go_icon.png" },
+    { name: "Go", icon: "assets/icons/Go_icon.png" },
     { name: "Swift", icon: "https://cdn-icons-png.flaticon.com/128/919/919853.png" },
-    { name: "R", icon: "G:/COPY DATA/COPY DATA/AFTER FORMAT STUFFS-8.94 GB/ACADEMIC STUFFS/COMPUTER STUDIES/Examples/infinity-compiler-hub/src/assets/icons/R_icon.png" }
+    { name: "R", icon: "assets/icons/R_icon.png" }
 ];
 
 const gridContainer = document.getElementById('gridContainer');
