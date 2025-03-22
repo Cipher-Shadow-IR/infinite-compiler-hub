@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		let particle = document.createElement("div");
 		particle.classList.add("particle");
 		let size = Math.random() * 5 + 2;
-		particle.style.width = ${size}px;
-		particle.style.height = ${size}px;
-		particle.style.left = ${Math.random() * 100}vw;
-		particle.style.top = ${Math.random() * 100}vh;
-		particle.style.animationDuration = ${Math.random() * 5 + 5}s;
+		particle.style.width = `${size}px`;
+		particle.style.height = `${size}px`;
+		particle.style.left = `${Math.random() * 100}vw`;
+		particle.style.top = `${Math.random() * 100}vh`;
+		particle.style.animationDuration = `${Math.random() * 5 + 5}s`;
 		body.appendChild(particle);
 	}
 });
