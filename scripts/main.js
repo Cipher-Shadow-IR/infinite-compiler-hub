@@ -14,6 +14,23 @@ for (let i = 0; i < numParticles; i++) {
     body.appendChild(particle);
 }
 
+const modal = document.querySelector(".modal-overlay");
+const modalClose = document.querySelector(".modal-close");
+const iframe = document.querySelector(".compiler-iframe");
+
+document.querySelectorAll(".icon-container").forEach(icon => {
+  icon.addEventListener("click", () => {
+    const url = icon.getAttribute("data-url");
+    iframe.src = url;
+    modal.classList.remove("hidden");
+  });
+});
+
+modalClose.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  iframe.src = ""; // Optional: clear iframe for performance
+});
+
 // Iframe Modal Logic
 const iconContainers = document.querySelectorAll('.icon-container');
 const modalOverlay = document.createElement('div');
