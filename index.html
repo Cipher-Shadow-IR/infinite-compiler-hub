@@ -2,119 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Infinity Compiler Hub - By Cipher Shadow</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infinity Compiler Hub</title>
+  <link rel="stylesheet" href="main.css" />
 </head>
 <body>
-  <div class="background-animation"></div>
-
-  <!-- Glitch Title -->
   <div class="container">
-    <h1 class="fancy-heading" id="mainTitle">
-      <!-- Letters will be auto-wrapped by JS -->
-      Infinity Compiler Hub
-    </h1>
-    <h2>Created by Cipher Shadow</h2>
+    <h1 class="glow-text">Infinity Compiler Hub</h1>
+    <p class="subtitle">Choose a language to begin coding</p>
 
-    <!-- Search Bar -->
-    <input
-      type="text"
-      class="search-bar"
-      id="searchBar"
-      placeholder="Search for a language..."
-    />
-
-    <!-- Compiler Grid -->
-    <div class="grid-container" id="gridContainer">
-      <!-- Dynamically generated -->
+    <div class="card-grid">
+      <!-- Example Cards -->
+      <div class="lang-card" data-url="https://onecompiler.com/python">
+        <img src="icons/python.svg" alt="Python">
+        <span>Python</span>
+      </div>
+      <div class="lang-card" data-url="https://onecompiler.com/c">
+        <img src="icons/c.svg" alt="C">
+        <span>C</span>
+      </div>
+      <div class="lang-card" data-url="https://onecompiler.com/html">
+        <img src="icons/html.svg" alt="HTML">
+        <span>HTML</span>
+      </div>
+      <!-- Add more cards as needed -->
     </div>
   </div>
 
-  <!-- Modal iframe for compiler -->
-  <div class="modal-overlay hidden"> <!-- ADD hidden here -->
-    <div class="modal-close">&times;</div>
-    <iframe src="" class="compiler-iframe" allowfullscreen></iframe>
+  <!-- Modal -->
+  <div id="compilerModal" class="modal hidden">
+    <span class="close-button" onclick="closeModal()">×</span>
+    <iframe id="compilerFrame" src="" frameborder="0"></iframe>
   </div>
 
-
-  <!-- Scripts -->
   <script>
-    // Define compilers
-    const compilers = {
-      python: "https://trinket.io/embed/python3/a5bd54189b",
-      c: "https://www.onlinegdb.com/online_c_compiler",
-      "c++": "https://www.onlinegdb.com/online_c++_compiler",
-      "c#": "https://www.onlinegdb.com/online_csharp_compiler",
-      java: "https://www.jdoodle.com/online-java-compiler",
-      javascript: "https://jsfiddle.net/",
-      ruby: "https://www.onlinegdb.com/online_ruby_compiler",
-      php: "https://nextleap.app/online-compiler/php-programming",
-      go: "https://go.dev/play/",
-      swift: "https://online.swiftplayground.run/",
-      r: "http://jdoodle.com/execute-r-online"
-    };
+    // Modal functionality
+    const modal = document.getElementById("compilerModal");
+    const frame = document.getElementById("compilerFrame");
+    const cards = document.querySelectorAll(".lang-card");
 
-    // Define languages and icons
-    const languages = [
-      { name: "Python", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968350.png" },
-      { name: "C", icon: "https://cdn-icons-png.flaticon.com/128/3665/3665923.png" },
-      { name: "C++", icon: "https://cdn-icons-png.flaticon.com/128/6132/6132222.png" },
-      { name: "C#", icon: "https://cdn-icons-png.flaticon.com/128/6132/6132221.png" },
-      { name: "Java", icon: "https://cdn-icons-png.flaticon.com/128/919/919854.png" },
-      { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/919/919828.png" },
-      { name: "Ruby", icon: "https://cdn-icons-png.flaticon.com/128/919/919842.png" },
-      { name: "PHP", icon: "https://cdn-icons-png.flaticon.com/128/919/919830.png" },
-      { name: "Go", icon: "assets/icons/Go_icon.png" },
-      { name: "Swift", icon: "https://cdn-icons-png.flaticon.com/128/919/919853.png" },
-      { name: "R", icon: "assets/icons/R_icon.png" }
-    ];
-
-    const gridContainer = document.getElementById("gridContainer");
-
-    // Generate icon grid dynamically
-    languages.forEach(lang => {
-      const iconContainer = document.createElement("div");
-      iconContainer.className = "icon-container";
-      iconContainer.setAttribute("data-url", compilers[lang.name.toLowerCase()]);
-
-      const icon = document.createElement("img");
-      icon.src = lang.icon;
-      icon.className = "icon";
-      icon.alt = lang.name;
-
-      const languageName = document.createElement("div");
-      languageName.className = "language-name";
-      languageName.textContent = lang.name;
-
-      iconContainer.appendChild(icon);
-      iconContainer.appendChild(languageName);
-      gridContainer.appendChild(iconContainer);
-    });
-
-    // Search functionality
-    const searchBar = document.getElementById("searchBar");
-    searchBar.addEventListener("input", () => {
-      const searchTerm = searchBar.value.toLowerCase();
-      const icons = document.querySelectorAll(".icon-container");
-      icons.forEach(icon => {
-        const languageName = icon.querySelector(".language-name").textContent.toLowerCase();
-        icon.style.display = languageName.includes(searchTerm) ? "flex" : "none";
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        const url = card.dataset.url;
+        if (url) {
+          frame.src = url;
+          modal.classList.remove("hidden");
+        }
       });
     });
 
-    // Auto-wrap heading text in spans for animation
-    const heading = document.getElementById("mainTitle");
-    const originalText = heading.innerText;
-    heading.innerHTML = "";
-    originalText.split("").forEach((char, index) => {
-      const span = document.createElement("span");
-      span.textContent = char;
-      span.style.animationDelay = `${index * 0.05}s`;
-      heading.appendChild(span);
-    });
+    function closeModal() {
+      frame.src = "";
+      modal.classList.add("hidden");
+    }
   </script>
-
-  <script src="scripts/main.js"></script>
 </body>
 </html>
