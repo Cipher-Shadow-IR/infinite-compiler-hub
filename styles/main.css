@@ -1,78 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
-  margin: 0;
-  background-color: #000;
-  font-family: 'Orbitron', sans-serif;
-  color: #0ff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 50px;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../assets/backgrounds/bg 1.webp'); /* Updated path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #00fff7;
+}
+
+/* Dark overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9); /* Adjust opacity as needed */
+    z-index: -1;
 }
 
 .container {
-  text-align: center;
-  padding: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
-h1.glow {
-  font-size: 2.8rem;
-  text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
-  animation: glow-pulse 2s infinite alternate;
+/* Typewriter effect */
+.fancy-heading {
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+    overflow: hidden; /* Hide overflow to create the typewriter effect */
+    white-space: nowrap; /* Keep text in one line */
+    animation: typewriter 4s steps(20) 1s 1 normal both;
 }
 
-.tagline {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #0ff;
+.fancy-heading span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
 }
 
-.language-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
-.lang-card {
-  background: #111;
-  border: 2px solid #0ff;
-  border-radius: 15px;
-  width: 120px;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 0 10px #0ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
-.lang-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px #0ff;
+/* Hover effect */
+.fancy-heading:hover span {
+    animation: glowAndScale 0.5s infinite alternate;
 }
 
-.lang-card img {
-  width: 60px;
-  height: 60px;
+@keyframes glowAndScale {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+    }
+    100% {
+        transform: scale(1.1);
+        text-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+    }
 }
 
-.lang-card span {
-  display: block;
-  margin-top: 0.5rem;
-  color: #0ff;
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    text-shadow: 0 0 5px #00fff7;
+    animation: blink 2s infinite;
 }
 
-.iframe-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  backdrop-filter: blur(10px);
+.search-bar {
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 300px;
+    border: 2px solid #00fff7;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #00fff7;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    outline: none;
+    transition: box-shadow 0.3s;
 }
 
-.iframe-modal.hidden {
-  display: none;
+.search-bar::placeholder {
+    color: #00fff7;
+    opacity: 0.7;
 }
 
-.iframe
+.search-bar:focus {
+    box-shadow: 0 0 20px #00fff7;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.icon-container:hover {
+    transform: scale(1.2);
+}
+
+.icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 247, 0.7);
+    filter: brightness(0.8);
+    transition: filter 0.3s, box-shadow 0.3s;
+    animation: rotateClockwise 10s infinite linear; /* Continuous rotation */
+    opacity: 1; /* Ensure icons are visible */
+}
+
+.icon:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 40px rgba(0, 255, 247, 1);
+}
+
+.language-name {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #00fff7;
+    text-shadow: 0 0 5px #00fff7;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 247, 0.1), transparent);
+    animation: pulse 10s infinite;
+    z-index: 1;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+    }
+    100% {
+        text-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes rotateClockwise {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* End at 360 degrees (full rotation) */
+    }
+}
+/* Background Particles */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/backgrounds/bg1.jpg') no-repeat center center/cover; /* Updated path */
+    opacity: 0.2;
+    z-index: -1;
+    animation: slide 20s infinite linear;
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
