@@ -33,13 +33,19 @@ To create a centralized platform that:
 ## 📁 Project Structure
 
 ```plaintext
-infinity-compiler-hub/
+Infinity-Compiler-Hub/
 │
-├── public/               # Static assets and icons
-├── src/
-│   ├── data/             # List of supported languages & compiler links
-│   ├── components/       # UI components
-│   ├── pages/            # Homepage, Language redirect page, etc.
-│   └── utils/            # Redirection logic, compiler checks
-├── README.md
-└── LICENSE
+├── index.html                # Main HTML entry point
+├── README.md                 # Project overview/documentation
+│
+├── styles/
+│   └── main.css              # All styles, including animations
+│
+├── scripts/
+│   └── main.js               # JavaScript handling modal, iframe etc.
+│
+├── assets/                   # All static files: icons, images, logos, etc.
+│   ├── icons/
+│   │   ├── Go.svg
+│   │   ├── R.svg
+│   │   └── html.svg
