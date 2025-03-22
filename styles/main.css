@@ -178,3 +178,6 @@ iframe {
     transform: scale(1.2);
     text-shadow: 0 0 10px var(--neon);
 }
+.hidden {
+  display: none;
+}
