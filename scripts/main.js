@@ -9,7 +9,32 @@ const compilers = {
     "php": "https://nextleap.app/online-compiler/php-programming",
     "go": "https://go.dev/play/",
     "swift": "https://online.swiftplayground.run/",
-    "r": "http://jdoodle.com/execute-r-online"
+    "r": "http://jdoodle.com/execute-r-online",
+    "assembly": "https://www.tutorialspoint.com/compile_assembly_online.php",
+    "bash": "https://www.tutorialspoint.com/execute_bash_online.php",
+    "clojure": "https://www.jdoodle.com/clojure-online-compiler",
+    "coffeescript": "https://www.tutorialspoint.com/execute_coffee_script_online.php",
+    "dart": "https://dartpad.dev/",
+    "elixir": "https://www.jdoodle.com/elixir-online-compiler",
+    "erlang": "https://www.jdoodle.com/erlang-online-compiler",
+    "f#": "https://www.jdoodle.com/fsharp-online-compiler",
+    "haskell": "https://www.jdoodle.com/haskell-online-compiler",
+    "html": "https://jsfiddle.net/",
+    "julia": "https://www.jdoodle.com/julia-online-compiler",
+    "kotlin": "https://www.jdoodle.com/kotlin-online-compiler",
+    "lisp": "https://www.jdoodle.com/lisp-online-compiler",
+    "lua": "https://www.jdoodle.com/lua-online-compiler",
+    "matlab": "https://www.jdoodle.com/matlab-online-compiler",
+    "objective-c": "https://www.jdoodle.com/objective-c-online-compiler",
+    "ocaml": "https://www.jdoodle.com/ocaml-online-compiler",
+    "perl": "https://www.jdoodle.com/perl-online-compiler",
+    "prolog": "https://www.jdoodle.com/prolog-online-compiler",
+    "rust": "https://www.jdoodle.com/rust-online-compiler",
+    "scala": "https://www.jdoodle.com/scala-online-compiler",
+    "sql": "https://www.jdoodle.com/sql-online-compiler",
+    "typescript": "https://www.jdoodle.com/typescript-online-compiler",
+    "vbscript": "https://www.tutorialspoint.com/execute_vbscript_online.php",
+    "react.js": "https://www.jdoodle.com/reactjs"
 };
 
 const languages = [
@@ -21,10 +46,27 @@ const languages = [
     { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/919/919828.png" },
     { name: "Ruby", icon: "https://cdn-icons-png.flaticon.com/128/919/919842.png" },
     { name: "PHP", icon: "https://cdn-icons-png.flaticon.com/128/919/919830.png" },
-    { name: "Go", icon: "assets/icons/Go_icon.png" },
+    { name: "Go", icon: "https://cdn-icons-png.flaticon.com/128/919/919857.png" },
     { name: "Swift", icon: "https://cdn-icons-png.flaticon.com/128/919/919853.png" },
-    { name: "R", icon: "assets/icons/R_icon.png" }
-];
+    { name: "R", icon: "https://cdn-icons-png.flaticon.com/128/919/919861.png" },
+    { name: "Assembly", icon: "https://cdn-icons-png.flaticon.com/128/919/919860.png" },
+    { name: "Bash", icon: "https://cdn-icons-png.flaticon.com/128/919/919859.png" },
+    { name: "Clojure", icon: "https://cdn-icons-png.flaticon.com/128/919/919858.png" },
+    { name: "CoffeeScript", icon: "https://cdn-icons-png.flaticon.com/128/919/919856.png" },
+    { name: "Dart", icon: "https://cdn-icons-png.flaticon.com/128/919/919855.png" },
+    { name: "Elixir", icon: "https://cdn-icons-png.flaticon.com/128/919/919852.png" },
+    { name: "Erlang", icon: "https://cdn-icons-png.flaticon.com/128/919/919851.png" },
+    { name: "F#", icon: "https://cdn-icons-png.flaticon.com/128/919/919850.png" },
+    { name: "Haskell", icon: "https://cdn-icons-png.flaticon.com/128/919/919849.png" },
+    { name: "HTML", icon: "https://cdn-icons-png.flaticon.com/128/919/919848.png" },
+    { name: "Julia", icon: "https://cdn-icons-png.flaticon.com/128/919/919847.png" },
+    { name: "Kotlin", icon: "https://cdn-icons-png.flaticon.com/128/919/919846.png" },
+    { name: "Lisp", icon: "https://cdn-icons-png.flaticon.com/128/919/919845.png" },
+    { name: "Lua", icon: "https://cdn-icons-png.flaticon.com/128/919/919844.png" },
+    { name: "Matlab", icon: "https://cdn-icons-png.flaticon.com/128/919/919843.png" },
+    { name: "Objective-C", icon: "https://cdn-icons-png.flaticon.com/128/919/919842.png" },
+    { name: "OCaml
+::contentReference[oaicite:4]{index=4}
 
 const gridContainer = document.getElementById('gridContainer');
 
