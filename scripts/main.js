@@ -65,9 +65,7 @@ const languages = [
     { name: "Lua", icon: "https://cdn-icons-png.flaticon.com/128/919/919844.png" },
     { name: "Matlab", icon: "https://cdn-icons-png.flaticon.com/128/919/919843.png" },
     { name: "Objective-C", icon: "https://cdn-icons-png.flaticon.com/128/919/919842.png" },
-    { name: "OCaml
-::contentReference[oaicite:4]{index=4}
-
+];
 const gridContainer = document.getElementById('gridContainer');
 
 // Generate icons dynamically
