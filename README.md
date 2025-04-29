@@ -65,7 +65,6 @@ Imagine a command center where:
 │   └── main.css
 ├── 🗂️ index.html          # Main landing page
 ├── 📄 README.md           # Documentation file
-└── 📄 structure.txt       # Generated folder map
 ```
 
 ---
@@ -102,4 +101,18 @@ Give credit, fork freely, and build your own compiler galaxy. 🚀
 
 ---
 
-Would you like this generated as a `README.md` file or styled with additional HTML/CSS for a launch page?
+## 🙌 Thanks To
+
+- **Myself 😎** – for envisioning, designing, and building the entire platform from scratch  
+- **Open-source compiler APIs & tools** – for powering seamless redirection across 300+ languages  
+- **HTML, CSS & JavaScript** – for enabling a futuristic yet responsive frontend  
+- **The developer community** – for inspiring the spirit of building universal tools  
+- **Curiosity** – for driving the idea behind unifying compilers into one seamless hub  
+
+---
+
+<p align="center">
+  <b>🚀 Keep Building. Keep Exploring. Keep Innovating.</b><br>
+  <img src="https://img.icons8.com/color/48/rocket.png"/><br>
+  <b>~Ishaan Ray (Cipher Shadow)</b><br>
+</p>
